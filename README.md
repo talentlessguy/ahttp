@@ -1,23 +1,24 @@
-# ahttp
+# httx
 
 coming soon...
 
 ## Example
 
 ```js
-import { App, send, Router } from 'ahttp'
+import { httx } from 'httx'
+import { router } from '@httx/router'
 
-const app = new App()
+const { req, res, router, mw, server } = httx({ router })
 
-const router = new Router()
+mw['/'] = ({ next }) => {
+  res.on('finish', () => console.log('logged'))
 
-app.use(() => send(404))
+  next()
+}
 
-app.use((req) => {
-  return send(`You're on ${req.url}`)
-})
+router.get('/', () => ({ hello: 'world' }))
 
-router.get('/', () => send('Hello World'))
+mw['/'] = router.routes() 
 
-await app.listen(3000)
+await server.listen(3000)
 ```
