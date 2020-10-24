@@ -10,15 +10,15 @@ import { router } from '@httx/router'
 
 const { req, res, router, mw, server } = httx({ router })
 
-mw['/'] = ({ next }) => {
+mw.add('/', ({ next }) => {
   res.on('finish', () => console.log('logged'))
 
   next()
-}
+})
 
 router.get('/', () => ({ hello: 'world' }))
 
-mw['/'] = router.routes() 
+mw.add('/', () => router.routes())
 
 await server.listen(3000)
 ```
