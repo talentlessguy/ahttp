@@ -1,3 +1,31 @@
 {
-	"type": "module"
+  "name": "ahttp",
+  "version": "0.0.0",
+  "description": "coming soon...",
+  "type": "module",
+  "homepage": "https://github.com/talentlessguy/ahttp#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/talentlessguy/ahttp.git"
+  },
+  "contributors": [
+    "v1rtl <https://v1rtl.site>"
+  ],
+  "main": "dist/index.cjs",
+  "types": "dist/index.d.ts",
+  "module": "dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./package.json": "./package.json",
+    "./": "./"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=12.x"
+  }
 }
