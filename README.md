@@ -2,7 +2,7 @@
 
 > HTTP server, extended.
 
-_**httx**_ is a set of small packages around HTTP server for advanced usage, including middlewares, URL parameters, and more. Every component is pluggable and is not tied to core.
+_**httx**_ is a set of small packages around HTTP server for advanced usage. This includes middleware system, request properties, and more. Every component is pluggable and is not tied to core so it's not really a web framework :P (but you can build one on top of httx)
 
 ## Example
 
