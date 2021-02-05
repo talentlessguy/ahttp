@@ -1,6 +1,8 @@
 # httx
 
-HTTP server, extended. _**httx**_ is a set of small packages around HTTP server for advanced usage, including middlewares, URL parameters, and more. Every component is pluggable and is not tied to core.
+> HTTP server, extended.
+
+_**httx**_ is a set of small packages around HTTP server for advanced usage, including middlewares, URL parameters, and more. Every component is pluggable and is not tied to core.
 
 ## Example
 
