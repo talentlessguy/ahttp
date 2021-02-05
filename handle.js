@@ -15,11 +15,9 @@ export const onError = (err, req, res) => {
 
 export const send = (body, res) => body && res.end(body)
 
-export const find = (mw, { method, url }) => mw.filter((m) => {
-		const path = pathname(url)
-		console.log(path, m.path)
-		return (m.method ? m.method === method : true) && m.path === pathname(url)
-	})
+export const find = (mw, { method, url }) => mw.filter((m) => 
+	(m.method ? m.method === method : true) && m.path === pathname(url)
+)
 
 export const handle = (obj, res, mw) => {
 

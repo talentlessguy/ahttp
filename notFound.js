@@ -1,4 +1,4 @@
 export const notFound = () => ({
 	path: '/',
-	handle: () => 'Not Found'
+	fn: () => 'Not Found'
 })

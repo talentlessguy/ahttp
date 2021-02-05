@@ -2,11 +2,11 @@ import { createServer } from 'http'
 import { objFromReq, find } from './handle.js'
 import { notFound } from './notFound.js'
 
-export const httx = async ({
-	handle
+export const httx = ({
+	handle, mw
 }) => {
 
-	const mw = []
+	mw = mw || []
 
 	let server = createServer()
 
