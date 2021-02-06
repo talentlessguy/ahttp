@@ -12,6 +12,8 @@ idk, i'm writing it for fun from time to time
 
 mb it'll grow into something
 
+currently it's a concept thinking / wip stage
+
 ## Example
 
 ### Ready-to-go setup
