@@ -33,6 +33,7 @@ import { handle } from '@httx/handle'
 import { router } from '@httx/router'
 import { find } from '@httx/find'
 import { notFound } from '@httx/notFound'
+import { objFromReq } from '@httx/obj'
 
 const r = router()
 
@@ -40,7 +41,7 @@ r.use('/', (_, next) => next())
 
 r.get('/', obj => `Hello from ${obj.path}`)
 
-const { server } = httx({ handle, mw: r.routes(), notFound, find })
+const { server } = httx({ handle, mw: r.routes(), notFound, find, formatReq: objFromReq })
 
 server.listen(3000, () => console.log(`Started on :3000`))
 ```
