@@ -23,3 +23,9 @@ const { server } = httx({ handle, mw: r.routes() })
 
 server.listen(3000, () => console.log(`Started on :3000`))
 ```
+
+## Roadmap
+
+- Build all micro modules
+- Create `@httx/app` for all packages combined
+- Creat examples of Express-like and Koa-like frameworks on top of `httx`
