@@ -2,15 +2,16 @@
 
 > HTTP server, extended.
 
-_**httx**_ is a set of small components around HTTP server for advanced usage. This includes middleware system, request properties, and more.
+_**httx**_ is an enhanced HTTP server _and_ set of small components around HTTP server for advanced usage.
 
-Every component is pluggable and isn't tied to core.
+If you need a ready-to-go framework, use `httx`, otherwise you can set up your own using httx components. Every component is pluggable and isn't tied to core.
 
 ## Example
 
+### Ready-to-go setup
+
 ```js
 import { httx } from 'httx'
-import { handle } from '@httx/handle'
 import { router } from '@httx/router'
 
 const r = router()
@@ -19,7 +20,27 @@ r.use('/', (_, next) => next())
 
 r.get('/', obj => `Hello from ${obj.path}`)
 
-const { server } = httx({ handle, mw: r.routes() })
+const app = httx({ mw: r.routes() })
+
+app.listen(3000, () => console.log(`Started on :3000`))
+```
+
+### Manual setup
+
+```js
+import { httx } from '@httx/core'
+import { handle } from '@httx/handle'
+import { router } from '@httx/router'
+import { find } from '@httx/find'
+import { notFound } from '@httx/notFound'
+
+const r = router()
+
+r.use('/', (_, next) => next())
+
+r.get('/', obj => `Hello from ${obj.path}`)
+
+const { server } = httx({ handle, mw: r.routes(), notFound, find })
 
 server.listen(3000, () => console.log(`Started on :3000`))
 ```
@@ -27,5 +48,5 @@ server.listen(3000, () => console.log(`Started on :3000`))
 ## Roadmap
 
 - Build all micro modules
-- Create `@httx/app` for all packages combined
+- Create `@httx/core` for all packages combined (e.g. a web framework)
 - Creat examples of Express-like and Koa-like frameworks on top of `httx`
