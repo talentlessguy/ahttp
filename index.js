@@ -1,10 +1,8 @@
 import { createServer } from 'http'
-import { find } from './find.js'
-import { notFound } from './notFound.js'
 
 export const httx = ({
 	handle, mw, formatReq = (req) => req,
-	notFound
+	notFound, find
 }) => {
 
 	mw = mw || []
