@@ -49,5 +49,6 @@ server.listen(3000, () => console.log(`Started on :3000`))
 ## Roadmap
 
 - Build all micro modules
-- Create `@httx/core` for all packages combined (e.g. a web framework)
-- Creat examples of Express-like and Koa-like frameworks on top of `httx`
+- Create `httx` for all packages combined (e.g. a web framework)
+- Create examples of Express-like and Koa-like frameworks on top of `httx`
+- Compare perf of `httx` vs `httx-polka` vs `httx-koa` vs `httx-tinyhttp` vs `polka` vs `tinyhttp` vs `express` vs `koa` vs `fastify`
