@@ -6,6 +6,12 @@ _**httx**_ is an enhanced HTTP server _and_ set of small components around HTTP 
 
 If you need a ready-to-go framework, use `httx`, otherwise you can set up your own using httx components. Every component is pluggable and isn't tied to core.
 
+## Project status
+
+idk, i'm writing it for fun from time to time
+
+mb it'll grow into something
+
 ## Example
 
 ### Ready-to-go setup
