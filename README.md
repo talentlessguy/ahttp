@@ -1,24 +1,25 @@
 # httx
 
-coming soon...
+> HTTP server, extended.
+
+_**httx**_ is a set of small components around HTTP server for advanced usage. This includes middleware system, request properties, and more.
+
+Every component is pluggable and isn't tied to core.
 
 ## Example
 
 ```js
 import { httx } from 'httx'
+import { handle } from '@httx/handle'
 import { router } from '@httx/router'
 
-const { req, res, router, mw, server } = httx({ router })
+const r = router()
 
-mw.add('/', ({ next }) => {
-  res.on('finish', () => console.log('logged'))
+r.use('/', (_, next) => next())
 
-  next()
-})
+r.get('/', obj => `Hello from ${obj.path}`)
 
-router.get('/', () => ({ hello: 'world' }))
+const { server } = httx({ handle, mw: r.routes() })
 
-mw.add('/', () => router.routes())
-
-await server.listen(3000)
+server.listen(3000, () => console.log(`Started on :3000`))
 ```
