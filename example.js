@@ -8,8 +8,6 @@ r.use('/', (_, next) => next())
 
 r.use('/params', (obj) => void obj.x = 5)
 
-
-
 const { server } = httx({ handle, mw: r.routes() })
 
 server.listen(3000, () => console.log(`Started on :3000`))

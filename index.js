@@ -1,9 +1,10 @@
 import { createServer } from 'http'
-import { objFromReq, find } from './handle.js'
+import { find } from './find.js'
 import { notFound } from './notFound.js'
 
 export const httx = ({
-	handle, mw
+	handle, mw, formatReq = (req) => req,
+	notFound
 }) => {
 
 	mw = mw || []
@@ -14,9 +15,9 @@ export const httx = ({
 	const m = [...find(mw, {
 		url: req.url,
 		method: req.method
-	}), notFound()]
+	}), notFound]
 
-		handle(objFromReq(req), res, m)
+		handle(formatReq(req), res, m)
 	})
 
 	return { mw, server }
