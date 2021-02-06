@@ -1,5 +1,5 @@
 import { httx } from './index.js'
-import { handle } from './handle.js'
+import { handle, objFromReq } from './handle.js'
 import { router } from './router.js'
 import { notFound } from './notFound.js'
 import { find } from './find.js'
