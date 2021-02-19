@@ -1,0 +1,13 @@
+importers:
+  examples/basic:
+    dependencies:
+      '@httx/find': link:../../packages/find
+      '@httx/handle': link:../../packages/handle
+      '@httx/not-found': link:../../packages/not-found
+      httx: link:../../packages/httx
+    specifiers:
+      '@httx/find': workspace:^0.0.0
+      '@httx/handle': workspace:^1.0.0
+      '@httx/not-found': workspace:^1.0.0
+      httx: workspace:^0.0.1
+lockfileVersion: 5.2

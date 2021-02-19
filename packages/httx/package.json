@@ -1,0 +1,10 @@
+{
+  "name": "httx",
+  "version": "0.0.1",
+  "description": "httx — HTTP server, extended",
+  "type": "module",
+  "main": "httx.js",
+  "keywords": [],
+  "author": "",
+  "license": "MIT"
+}
